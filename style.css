@@ -22,7 +22,7 @@ body {
 }
 
 /* TARJETA PRINCIPAL */
-.card {
+.flip-card-front {
   width: 100%;
   max-width: 1200px;
   font-family: "Playfair Display", serif;
@@ -54,14 +54,14 @@ body {
 }
 
 /* TEXTO */
-.card h1 {
+.flip-card-front h1 {
   text-align: center;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 600;
   letter-spacing: 0.05em;
 }
 
-.card p {
+.flip-card-front p {
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   text-align: center;
   max-width: 600px;
@@ -69,7 +69,7 @@ body {
   opacity: 0.9;
 }
 
-.card h2 {
+.flip-card-front h2 {
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   font-weight: 400;
   letter-spacing: 0.15em;
@@ -97,18 +97,18 @@ body {
 
 /* TABLET */
 @media (min-width: 600px) {
-  .card {
+  .flip-card-front {
     padding: 3rem;
   }
 }
 
 /* NOTEBOOK */
 @media (min-width: 1024px) {
-  .card {
+  .flip-card-front {
     padding: 4rem 5rem;
   }
 
-  .card p {
+  .flip-card-front p {
     max-width: 70%;
     margin: 0 auto;
   }
@@ -116,7 +116,7 @@ body {
 
 /* PANTALLA GRANDE */
 @media (min-width: 1440px) {
-  .card {
+  .flip-card-front {
     max-width: 1400px;
   }
 }
@@ -127,7 +127,7 @@ body {
     padding: 0;
   }
 
-  .card {
+  .flip-card-front {
     min-height: 100vh;
     width: 100%;
     max-width: 100%;

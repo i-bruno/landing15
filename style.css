@@ -112,7 +112,7 @@ body {
 }
 
 .flip-card-back {
-  background-image: url("./img/Fondo tarjeta.png");
+  background-image: url("./img/Fondo_tarjeta.png");
   transform: rotateY(180deg);
   background-size: cover;
   background-position: center;
@@ -122,7 +122,6 @@ body {
 /* INDICADOR SWIPE */
 .hint {
   margin-top: 2rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,43 +130,18 @@ body {
   opacity: 0.85;
 }
 
-.hint span {
-  font-size: 0.9rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.arrow-hint {
+  font-size: 2.5rem;
+  opacity: 0.7;
+
+  animation: swipeHint 1.5s infinite ease-in-out;
 }
 
-.arrow-right.icon {
-  color: #000;
-  position: absolute;
-  margin-left: 2px;
-  margin-top: 10px;
-  width: 16px;
-  height: 1px;
-  background-color: currentColor;
-}
-
-.arrow-right.icon:before {
-  content: '';
-  position: absolute;
-  right: 1px;
-  top: -5px;
-  width: 10px;
-  height: 10px;
-  border-top: solid 1px currentColor;
-  border-right: solid 1px currentColor;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-
-
-
-/* MÓVIL */
-@media (max-width: 599px) {
-  .hint span {
-    font-size: 0.8rem;
-  }
+/* Animación */
+@keyframes swipeHint {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(12px); }
+  100% { transform: translateX(0); }
 }
 
 /* TABLET */

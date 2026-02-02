@@ -137,36 +137,36 @@ body {
   text-transform: uppercase;
 }
 
-/* BOTÓN */
-.flip-btn {
-  background: transparent;
-  border: 1px solid rgba(0,0,0,0.4);
-
-  padding: 0.5rem 1.4rem;
-
-  font-family: "Playfair Display", serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-
-  border-radius: 30px;
-
-  cursor: pointer;
-
-  transition: all 0.3s ease;
+.arrow-right.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 2px;
+  margin-top: 10px;
+  width: 16px;
+  height: 1px;
+  background-color: currentColor;
 }
 
-.flip-btn:hover {
-  background: rgba(0,0,0,0.05);
+.arrow-right.icon:before {
+  content: '';
+  position: absolute;
+  right: 1px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-top: solid 1px currentColor;
+  border-right: solid 1px currentColor;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
+
+
+
 
 /* MÓVIL */
 @media (max-width: 599px) {
   .hint span {
     font-size: 0.8rem;
-  }
-
-  .flip-btn {
-    font-size: 0.85rem;
   }
 }
 

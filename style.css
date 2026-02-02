@@ -112,7 +112,7 @@ body {
 }
 
 .flip-card-back {
-  background-image: url("./img/fondo-floral.png");
+  background-image: url("./img/Fondo tarjeta.png");
   transform: rotateY(180deg);
   background-size: cover;
   background-position: center;

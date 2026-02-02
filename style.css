@@ -95,6 +95,17 @@ body {
   transform: rotateY(180deg);
 }
 
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14 px 0 rgba(0, 0, 0, 0.2);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
 /* TABLET */
 @media (min-width: 600px) {
   .flip-card-front {

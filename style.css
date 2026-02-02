@@ -69,6 +69,14 @@ body {
   opacity: 0.9;
 }
 
+.card h2 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
 /* TABLET */
 @media (min-width: 600px) {
   .card {

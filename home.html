@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Cumpleaños de 15</title>
 </head>
 
@@ -20,8 +19,9 @@
                 <h2>Lola</h2>
                 <p>28 de febrero de 2026</p>
 
-                <div class="hint arrow-hint">
-                    <i class="fa-solid fa-arrow-right"></i>
+                <div class="hint">
+                    <span>Deslizá →</span>
+                    <button class="flip-btn">Ver invitación</button>
                 </div>
 
             </div>
@@ -40,58 +40,72 @@
 
         </div>
     </div>
-    <script>
-        const card = document.querySelector(".flip-card");
+<script>
+  const card = document.querySelector(".flip-card");
+  const btn = document.querySelector(".flip-btn");
 
-        let startX = 0;
-        let endX = 0;
-        let locked = false;
+  let startX = 0;
+  let endX = 0;
+  let locked = false;
 
-        const minSwipe = 60;
-        const duration = 800;
+  const minSwipe = 60;
+  const duration = 800; // igual a CSS
 
-        card.addEventListener("touchstart", e => {
-            startX = e.touches[0].clientX;
-        });
+  /* BOTÓN */
+  btn.addEventListener("click", () => {
+    flip();
+  });
 
-        card.addEventListener("touchend", e => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
+  /* TOUCH */
+  card.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
 
-        card.addEventListener("mousedown", e => {
-            startX = e.clientX;
-        });
+  card.addEventListener("touchend", e => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+  });
 
-        card.addEventListener("mouseup", e => {
-            endX = e.clientX;
-            handleSwipe();
-        });
+  /* MOUSE */
+  card.addEventListener("mousedown", e => {
+    startX = e.clientX;
+  });
 
-        function handleSwipe() {
-            const diff = endX - startX;
+  card.addEventListener("mouseup", e => {
+    endX = e.clientX;
+    handleSwipe();
+  });
 
-            if (locked) return;
+  function handleSwipe() {
+    const diff = endX - startX;
 
-            if (diff > minSwipe) flip(true);
-            if (diff < -minSwipe) flip(false);
-        }
+    if (diff > minSwipe) {
+      flip(true);   // abrir
+    }
 
-        function flip(open) {
-            locked = true;
+    if (diff < -minSwipe) {
+      flip(false);  // cerrar
+    }
+  }
 
-            if (open) {
-                card.classList.add("is-flipped");
-            } else {
-                card.classList.remove("is-flipped");
-            }
+  function flip(open) {
+    if (locked) return;
 
-            setTimeout(() => {
-                locked = false;
-            }, duration);
-        }
-    </script>
+    locked = true;
 
+    if (open === undefined) {
+      card.classList.toggle("is-flipped");
+    } else if (open) {
+      card.classList.add("is-flipped");
+    } else {
+      card.classList.remove("is-flipped");
+    }
+
+    setTimeout(() => {
+      locked = false;
+    }, duration);
+  }
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

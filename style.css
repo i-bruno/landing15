@@ -79,3 +79,21 @@ body {
     max-width: 1400px;
   }
 }
+
+/* CELULAR: pantalla completa */
+@media (max-width: 599px) {
+  .page {
+    padding: 0;
+  }
+
+  .card {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100%;
+
+    border-radius: 0;
+    padding: 2rem 1.5rem;
+
+    box-shadow: none;
+  }
+}

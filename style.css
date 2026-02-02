@@ -119,6 +119,57 @@ body {
   background-repeat: no-repeat;
 }
 
+/* INDICADOR SWIPE */
+.hint {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+
+  opacity: 0.85;
+}
+
+.hint span {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* BOTÓN */
+.flip-btn {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.4);
+
+  padding: 0.5rem 1.4rem;
+
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.flip-btn:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* MÓVIL */
+@media (max-width: 599px) {
+  .hint span {
+    font-size: 0.8rem;
+  }
+
+  .flip-btn {
+    font-size: 0.85rem;
+  }
+}
+
 /* TABLET */
 @media (min-width: 600px) {
   .flip-card-front {

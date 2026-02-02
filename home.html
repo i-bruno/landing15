@@ -18,6 +18,12 @@
                 <h1 class="title">Cumpleaños de 15</h1>
                 <h2>Lola</h2>
                 <p>28 de febrero de 2026</p>
+
+                <div class="hint">
+                    <span>Deslizá →</span>
+                    <button class="flip-btn">Ver invitación</button>
+                </div>
+
             </div>
 
             <div class="flip-card-back page">
@@ -36,12 +42,21 @@
     </div>
     <script>
         const card = document.querySelector(".flip-card");
+        const btn = document.querySelector(".flip-btn");
 
         let startX = 0;
         let endX = 0;
+        let locked = false;
 
         const minSwipe = 60;
+        const duration = 800; // igual a CSS
 
+        /* BOTÓN */
+        btn.addEventListener("click", () => {
+            flip();
+        });
+
+        /* TOUCH */
         card.addEventListener("touchstart", e => {
             startX = e.touches[0].clientX;
         });
@@ -51,16 +66,44 @@
             handleSwipe();
         });
 
+        /* MOUSE */
+        card.addEventListener("mousedown", e => {
+            startX = e.clientX;
+        });
+
+        card.addEventListener("mouseup", e => {
+            endX = e.clientX;
+            handleSwipe();
+        });
+
         function handleSwipe() {
             const diff = endX - startX;
 
             if (diff > minSwipe) {
-                card.classList.add("is-flipped"); // abre
+                flip(true);   // abrir
             }
 
             if (diff < -minSwipe) {
-                card.classList.remove("is-flipped"); // cierra
+                flip(false);  // cerrar
             }
+        }
+
+        function flip(open) {
+            if (locked) return;
+
+            locked = true;
+
+            if (open === undefined) {
+                card.classList.toggle("is-flipped");
+            } else if (open) {
+                card.classList.add("is-flipped");
+            } else {
+                card.classList.remove("is-flipped");
+            }
+
+            setTimeout(() => {
+                locked = false;
+            }, duration);
         }
     </script>
 

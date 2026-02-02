@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: "Playfair Display", serif;
   background-color: #f4f2ee;
 }
 
@@ -25,6 +25,7 @@ body {
 .card {
   width: 100%;
   max-width: 1200px;
+  font-family: "Playfair Display", serif;
 
   background-image: url("./img/fondo-floral.png");
   background-size: cover;
@@ -35,7 +36,17 @@ body {
 
   padding: 2rem 1.5rem;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* vertical */
+  align-items: center;
+  /* horizontal */
+  text-align: center;
+  /* texto */
 
   display: flex;
   flex-direction: column;
@@ -44,14 +55,18 @@ body {
 
 /* TEXTO */
 .card h1 {
-  font-size: clamp(1.5rem, 4vw, 3rem);
   text-align: center;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 
 .card p {
   font-size: clamp(1rem, 2.5vw, 1.2rem);
-  line-height: 1.6;
   text-align: center;
+  max-width: 600px;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
 /* TABLET */

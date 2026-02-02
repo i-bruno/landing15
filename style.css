@@ -112,7 +112,7 @@ body {
 }
 
 .flip-card-back {
-  background-image: url("./img/Fondo_tarjeta.png");
+  background-image: url("./img/fondo_tarjeta.png");
   transform: rotateY(180deg);
   background-size: cover;
   background-position: center;
@@ -131,7 +131,7 @@ body {
 }
 
 .arrow-hint {
-  font-size: 2.5rem;
+  font-size: 5rem;
   opacity: 0.7;
 
   animation: swipeHint 1.5s infinite ease-in-out;

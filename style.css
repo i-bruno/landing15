@@ -135,6 +135,10 @@ body {
   padding: 1rem;
 }
 
+.hand{
+  color: #0000;
+}
+
 /* INDICADOR SWIPE */
 .hint {
   margin-top: -2rem;

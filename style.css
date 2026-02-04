@@ -134,6 +134,12 @@ body {
   background-repeat: no-repeat;
 }
 
+.back {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 12px;
+}
+
 /* INDICADOR SWIPE */
 .hint {
   margin-top: -2rem;
@@ -154,9 +160,17 @@ body {
 
 /* Animación */
 @keyframes swipeHint {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(12px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(12px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* TABLET */

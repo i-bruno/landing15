@@ -127,18 +127,11 @@ body {
 }
 
 .flip-card-back {
-  background-image: url("./img/pileta.webp");
+  background-image: url("./img/fondo_tarjeta.png");
   transform: rotateY(180deg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.back {
-  background: rgba(255, 255, 255, 0.75);
-  padding: 20px;
-  border-radius: 12px;
-  margin: 1rem;
 }
 
 /* INDICADOR SWIPE */

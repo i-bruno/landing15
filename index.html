@@ -34,37 +34,38 @@
             </div>
 
             <div class="flip-card-back page">
-                    <h1 class="title abril-fatface-regular">
-                        ¿Dónde?
-                    </h1>
-                    <p class="playwrite-nz-basic-lola">
-                        Moreno, Provincia de Buenos Aires <br>
-                        <a href="https://maps.app.goo.gl/hAR5hTKvsay3ryX7A">Click acá</a>
-                    </p>
-                    <hr>
-                    <h1 class="abril-fatface-regular">
-                        ¿Cuándo?
-                    </h1>
-                    <p class="playwrite-nz-basic-lola">
-                        Sábado 28 de febrero de 2026, 14 hs
-                    </p>
-                    <hr>
-                    <h1 class="abril-fatface-regular">
-                        Por favor confirmá!!
-                    </h1>
-                    <a href="https://wa.me/541161849246">→ Click acá! ←</a>
-                    <p class="playwrite-nz-basic-lola"> <strong>Amistades:</strong> Nos encontramos 12:30 hs en la
-                        puerta de la escuela para salir juntos
-                        hasta la quinta.</p>
-                    <p class="playwrite-nz-basic-lola">Acordate de llevar ropa cómoda, malla, protector solar y repelente!</p>
-                    <p class="playwrite-nz-basic-lola">Si deseas hacerme un regalo</p>
-                    <p class="playwrite-nz-basic-lola">Alias: lola.sofia.aguirre</p>
-                    <p class="playwrite-nz-basic-lola">💌 Te espero 💕</p>
+                <h1 class="title abril-fatface-regular">
+                    ¿Dónde?
+                </h1>
+                <p class="playwrite-nz-basic-lola">
+                    Moreno, Provincia de Buenos Aires <br>
+                    <a href="https://maps.app.goo.gl/hAR5hTKvsay3ryX7A">→ Click acá! ←</a>
+                </p>
+                <hr>
+                <h1 class="abril-fatface-regular">
+                    ¿Cuándo?
+                </h1>
+                <p class="playwrite-nz-basic-lola">
+                    Sábado 28 de febrero de 2026, 14 hs
+                </p>
+                <hr>
+                <h1 class="abril-fatface-regular">
+                    Por favor confirmá!!
+                </h1>
+                <a href="https://wa.me/541161849246">→ Click acá! ←</a>
+                <p class="playwrite-nz-basic-lola"> <strong>Amistades:</strong> Nos encontramos 12:30 hs en la
+                    puerta de la escuela para salir juntos
+                    hasta la quinta.</p>
+                <p class="playwrite-nz-basic-lola">Acordate de llevar ropa cómoda, malla, protector solar y repelente!
+                </p>
+                <p class="playwrite-nz-basic-lola">Si deseas hacerme un regalo</p>
+                <p class="playwrite-nz-basic-lola">Alias: lola.sofia.aguirre</p>
+                <p class="playwrite-nz-basic-lola">💌 Te espero 💕</p>
             </div>
 
         </div>
     </div>
-    <script>
+    <!-- <script>
         const card = document.querySelector(".flip-card");
 
         let startX = 0;
@@ -123,6 +124,30 @@
                 locked = false;
             }, duration);
         }
+    </script> -->
+    <script>
+        const card = document.querySelector(".flip-card");
+
+        let startX = 0;
+        let endX = 0;
+
+        // TAP (click/touch)
+        card.addEventListener("click", () => {
+            card.classList.toggle("is-flipped");
+        });
+
+        // Detectar swipe
+        card.addEventListener("touchstart", (e) => {
+            startX = e.changedTouches[0].screenX;
+        });
+
+        card.addEventListener("touchend", (e) => {
+            endX = e.changedTouches[0].screenX;
+
+            if (Math.abs(startX - endX) > 50) {
+                card.classList.toggle("is-flipped");
+            }
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

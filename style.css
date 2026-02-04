@@ -137,9 +137,27 @@ body {
 
 .hand{
   color: #0000;
-  width: 40px;
-  height: 40px;
+  width: clamp(36px, 7vw, 52px);
+  height: clamp(36px, 7vw, 52px);
+  stroke: #000;
+
+  animation: pulse 2s infinite ease-in-out;
   margin-top: 2rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }
 
 /* INDICADOR SWIPE */

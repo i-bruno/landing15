@@ -11,6 +11,14 @@
   font-style: normal;
 }
 
+
+.playwrite-nz-basic-lola {
+  font-family: "Playwrite NZ Basic", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
 body {
   font-family: "Playfair Display", serif;
   background-color: #f4f2ee;

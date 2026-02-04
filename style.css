@@ -147,9 +147,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 1rem;
-  justify-content: space-evenly;
+  justify-content: center;
 }
+/* padding: 1rem; */
 
 .hand {
   color: #0000;

@@ -135,7 +135,7 @@ body {
   padding: 1rem;
 }
 
-.hand{
+.hand {
   color: #0000;
   width: clamp(36px, 7vw, 52px);
   height: clamp(36px, 7vw, 52px);
@@ -150,14 +150,36 @@ body {
     transform: scale(1);
     opacity: 0.8;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 1;
   }
+
   100% {
     transform: scale(1);
     opacity: 0.8;
   }
+}
+
+.divLareja {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.lareja {
+  width: 100%;
+  max-width: 280px; /* tamaño chico */
+  border-radius: 12px;
+  cursor: zoom-in;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.lareja:hover{
+  transform: scale(1.03);
 }
 
 /* INDICADOR SWIPE */

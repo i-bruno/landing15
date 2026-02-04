@@ -26,6 +26,10 @@ body {
   background-color: #f4f2ee;
 }
 
+.click{
+  margin-bottom: 1rem;
+}
+
 /* CONTENEDOR GENERAL */
 .page {
   min-height: 100vh;

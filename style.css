@@ -27,6 +27,7 @@ body {
   background-color: #f4f2ee;
   min-height: 100dvh;
   overflow: hidden;
+  margin: 1rem;
 }
 
 .click {

@@ -37,17 +37,17 @@
 
             <div class="flip-card-back page">
                 <h1 class="title abril-fatface-regular">
-                   ¿Dónde?
+                    ¿Dónde?
                 </h1>
                 <p class="playwrite-nz-basic-lola">
-                   📍 Moreno, Provincia de Buenos Aires <br>
+                    📍 Moreno, Provincia de Buenos Aires <br>
                     <a href="https://maps.app.goo.gl/hAR5hTKvsay3ryX7A">→ Click acá! ←</a>
                 </p>
                 <div class="divLareja">
                     <img class="lareja" src="./img/lareja.webp" alt="">
                 </div>
                 <h1 class="abril-fatface-regular">
-                   ¿Cuándo?
+                    ¿Cuándo?
                 </h1>
                 <p class="playwrite-nz-basic-lola">
                     📅 Sábado 28 de febrero de 2026, 14 hs
@@ -55,7 +55,7 @@
                 <h1 class="abril-fatface-regular">
                     Por favor confirmá!!
                 </h1>
-                <a  class="playwrite-nz-basic-lola" href="https://wa.me/541161849246">→ Click acá! ←</a>
+                <a class="playwrite-nz-basic-lola" href="https://wa.me/541161849246">→ Click acá! ←</a>
                 <p class="playwrite-nz-basic-lola"> <strong>Amistades:</strong> Nos encontramos 12:30 hs en la
                     puerta de la escuela para salir juntos
                     hasta la quinta.</p>
@@ -74,12 +74,19 @@
         let startX = 0;
         let endX = 0;
 
-        // TAP (click/touch)
-        card.addEventListener("click", () => {
+        // CLICK / TAP
+        card.addEventListener("click", (e) => {
+
+            // Si el click fue en un link o dentro de un link → no girar
+            if (e.target.closest("a")) {
+                return;
+            }
+
             card.classList.toggle("is-flipped");
         });
 
-        // Detectar swipe
+
+        // SWIPE
         card.addEventListener("touchstart", (e) => {
             startX = e.changedTouches[0].screenX;
         });
